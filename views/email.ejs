@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title><%= action %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      table,
+      td,
+      a {
+        -ms-text-size-adjust: 100%; /* 1 */
+        -webkit-text-size-adjust: 100%; /* 2 */
+      }
+      table,
+      td {
+        mso-table-rspace: 0pt;
+        mso-table-lspace: 0pt;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+      a[x-apple-data-detectors] {
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      div[style*='margin: 16px 0;'] {
+        margin: 0 !important;
+      }
+      body {
+        width: 100% !important;
+        height: 100% !important;
+        padding: 64px 32px;
+        margin: 0 !important;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      a {
+        color: #1a82e2;
+      }
+      img {
+        height: auto;
+        line-height: 100%;
+        text-decoration: none;
+        border: 0;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body style="background-color: #e9ecef">
+    <!-- start body -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!-- start hero -->
+      <tr>
+        <td align="center" bgcolor="#e9ecef">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px">
+            <tr>
+              <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: Arial, sans-serif; border-top: 3px solid #d4dadf">
+                <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; text-transform: capitalize">
+                  <%= action %>
+                </h1>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- end hero -->
+
+      <!-- start copy block -->
+      <tr>
+        <td align="center" bgcolor="#e9ecef">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px">
+            <!-- start copy -->
+            <tr>
+              <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px">
+                <p style="margin: 0">
+                  Tap the button below to <%= action.toLowerCase() %>. If you didn't create an account with
+                  <a href="<%= process.env.HOST %>"> <%= process.env.APP_NAME || 'App' %></a>, you can safely delete this email.
+                </p>
+              </td>
+            </tr>
+            <!-- end copy -->
+
+            <!-- start button -->
+            <tr>
+              <td align="left" bgcolor="#ffffff">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="center" bgcolor="#ffffff" style="padding: 12px">
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td align="center" bgcolor="#1a82e2" style="border-radius: 6px">
+                            <a
+                              href="<%= `${process.env.HOST || "http://127.0.0.1:3000"}/user/${actionURL}/${token}` %>"
+                              target="_blank"
+                              style="
+                                display: inline-block;
+                                padding: 16px 36px;
+                                font-family: Arial, sans-serif;
+                                font-size: 16px;
+                                color: #ffffff;
+                                text-decoration: none;
+                                border-radius: 6px;
+                                text-transform: capitalize;
+                              "
+                              ><%= action %></a
+                            >
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- end button -->
+
+            <!-- start copy -->
+            <tr>
+              <td
+                align="left"
+                bgcolor="#ffffff"
+                style="padding: 24px; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf"
+              >
+                <p style="margin: 0">
+                  Cheers,<br />
+                  <%= process.env.APP_NAME || 'App' %>
+                </p>
+              </td>
+            </tr>
+            <!-- end copy -->
+          </table>
+        </td>
+      </tr>
+      <!-- end copy block -->
+    </table>
+    <!-- end body -->
+  </body>
+</html>
