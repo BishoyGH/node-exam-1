@@ -1,4 +1,4 @@
-# Node Exam 01
+# Node Social Network
 
 ## Project Requirements
 
